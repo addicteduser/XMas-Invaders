@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bounds : MonoBehaviour {
+public class BoundsScroller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
