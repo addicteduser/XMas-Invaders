@@ -1,10 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Scroller.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Santa.cs">
     <Files>
-      <File FileName="Assets\Scripts\Scroller.cs" Line="10" Column="12" />
-      <File FileName="Assets\Scripts\BackgroundTiling.cs" Line="23" Column="1" />
-      <File FileName="Assets\Scripts\Santa.cs" Line="50" Column="1" />
+      <File FileName="Assets\Scripts\BackgroundTiling.cs" Line="6" Column="2" />
+      <File FileName="Assets\Scripts\Santa.cs" Line="41" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
