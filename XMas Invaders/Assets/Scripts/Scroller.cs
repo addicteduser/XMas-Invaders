@@ -7,7 +7,7 @@ public class Scroller : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		speed = 20f;
+		speed = 2f;
 	}
 	
 	// Update is called once per frame
