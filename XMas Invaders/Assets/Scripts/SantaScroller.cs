@@ -3,6 +3,8 @@ using System.Collections;
 
 public class SantaScroller : MonoBehaviour {
 
+	// This is responsible for Santa's movements
+
 	public static Vector3 currentPos;
 
 	private float speed;
@@ -34,6 +36,7 @@ public class SantaScroller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		// move horizontal
 		GetCurrentPosition();
 		float newX = Camera.main.transform.position.x - distanceFromCamera;
 		transform.position = new Vector3(newX, y, z);

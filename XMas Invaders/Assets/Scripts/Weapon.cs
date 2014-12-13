@@ -14,8 +14,12 @@ public class Weapon : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+		// starting point of the bullets
 		firePoint = transform.FindChild("FirePoint");
+		// starting point of the WIPE OUT bullet
 		wipeOutPoint = transform.FindChild("WipeOut");
+		
+		// checkers
 		if (firePoint == null) {
 			Debug.LogError("No FirePoint Child");
 		}
@@ -24,14 +28,7 @@ public class Weapon : MonoBehaviour {
 		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
-
-	}
-	
 	public void Shoot() {
-		
-	
 	
 		if (BulletTrailPrefabIndex == 4) {
 			ReadyShoot(wipeOutPoint);
@@ -50,6 +47,7 @@ public class Weapon : MonoBehaviour {
 		//}
 	}
 	
+	// Does the "SHOOT" depending on the (starting) POINT
 	public void ReadyShoot(Transform point) {
 		Vector2 pointPosition = new Vector2 (point.position.x, point.position.y);
 		Vector2 target = new Vector2 (point.position.x+100, point.position.y);
@@ -57,14 +55,17 @@ public class Weapon : MonoBehaviour {
 		Effect(point);
 	}
 	
+	// Sets what kind of bullet to use
 	public void SetBulletTrailIndex(int index) {
 		BulletTrailPrefabIndex = index;
 	}
 	
+	// Sets how much damage the bullet can render
 	public void SetDamageIndex(int index) {
 		DamageIndex = index;
 	}
 	
+	// Renders the effect on the scene
 	private void Effect(Transform point) {
 		Instantiate(BulletTrailPrefab[BulletTrailPrefabIndex], point.position, point.rotation);
 	}

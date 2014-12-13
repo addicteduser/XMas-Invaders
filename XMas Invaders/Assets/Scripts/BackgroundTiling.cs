@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 public class BackgroundTiling : MonoBehaviour {
 	
+	// This code is for the recycling/respawning of the background
+	// Infinite scroller-ish effect
+	
 	private Transform cameraPos;
 	private float spriteWidth;
 	

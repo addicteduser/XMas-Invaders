@@ -3,12 +3,9 @@ using System.Collections;
 
 public class BoundsScroller : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-
-	}
+	// This is so that the bounds follow Santa
+	// The bounds are for limiting Santa to not leave the screen
 	
-	// Update is called once per frame
 	void Update () {
 		float y = transform.position.y;
 		float z = transform.position.z;
