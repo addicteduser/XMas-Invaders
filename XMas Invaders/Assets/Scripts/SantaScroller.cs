@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Santa : MonoBehaviour {
+public class SantaScroller : MonoBehaviour {
 
 	public static Vector3 currentPos;
 
@@ -35,7 +35,6 @@ public class Santa : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		GetCurrentPosition();
-		
 		float newX = Camera.main.transform.position.x - distanceFromCamera;
 		transform.position = new Vector3(newX, y, z);
 		currentPos = transform.position;

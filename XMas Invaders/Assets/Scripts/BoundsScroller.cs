@@ -12,7 +12,7 @@ public class BoundsScroller : MonoBehaviour {
 	void Update () {
 		float y = transform.position.y;
 		float z = transform.position.z;
-		transform.position = new Vector3(Santa.currentPos.x, y, z);
+		transform.position = new Vector3(SantaScroller.currentPos.x, y, z);
 	}
 	
 }
