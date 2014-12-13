@@ -5,10 +5,9 @@ public class Weapon : MonoBehaviour {
 
 	public float damage = 10;
 	public LayerMask whatToHit;
-	
-	public Transform BulletTrailPrefab;
-	
-	private float timeToFire = 0;
+	public Transform[] BulletTrailPrefab;
+
+	private int BulletTrailPrefabIndex = 0;
 	private Transform firePoint;
 
 	// Use this for initialization
@@ -36,7 +35,11 @@ public class Weapon : MonoBehaviour {
 		}
 	}
 	
+	public void SetBulletTrailIndex(int index) {
+		BulletTrailPrefabIndex = index;
+	}
+	
 	private void Effect() {
-		Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
+		Instantiate(BulletTrailPrefab[BulletTrailPrefabIndex], firePoint.position, firePoint.rotation);
 	}
 }
