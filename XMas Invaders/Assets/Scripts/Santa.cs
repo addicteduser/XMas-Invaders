@@ -41,6 +41,10 @@ public class Santa : MonoBehaviour {
 		currentPos = transform.position;
 	}
 	
+	public void SantaFire() {
+		Debug.Log("FIRE");
+	}
+	
 	private void GetCurrentPosition() {
 		x = transform.position.x;
 		y = transform.position.y;
