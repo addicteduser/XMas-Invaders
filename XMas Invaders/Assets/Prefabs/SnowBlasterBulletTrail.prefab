@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 50: {fileID: 5000000}
   - 58: {fileID: 5800000}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: SnowBlasterBulletTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   - 120: {fileID: 12000000}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: BulletTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 3045334731
+  m_SortingLayerID: 3745432183
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: dc8f31941851edf4b859014bb89c670d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

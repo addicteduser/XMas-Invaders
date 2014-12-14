@@ -17,7 +17,7 @@ TagManager:
   User Layer 9: Background
   User Layer 10: Utility Bar
   User Layer 11: Enemies
-  User Layer 12: 
+  User Layer 12: Bullets
   User Layer 13: 
   User Layer 14: 
   User Layer 15: 
@@ -49,6 +49,10 @@ TagManager:
   - name: Enemy
     userID: 4
     uniqueID: 358197633
+    locked: 0
+  - name: Bullets
+    userID: 5
+    uniqueID: 3745432183
     locked: 0
   - name: Utility Bar
     userID: 3

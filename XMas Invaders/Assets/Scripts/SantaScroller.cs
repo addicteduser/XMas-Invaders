@@ -24,6 +24,15 @@ public class SantaScroller : MonoBehaviour {
 	private float x, y, z;
 	private float lockY = 0, lockZ = 0;
 	
+	/// <summary>
+	/// Flag for when the up button is being pressed
+	/// </summary>
+	public bool isUpPressed = false;
+	/// <summary>
+	/// Flag for when the down button is being pressed
+	/// </summary>
+	public bool isDownPressed = false;
+	
 	// Use this for initialization
 	void Start () {
 		// get the distance from the camera
@@ -35,22 +44,20 @@ public class SantaScroller : MonoBehaviour {
 	}
 	
 	/// <summary>
-	/// For vertical movement
+	/// For verical movement
 	/// </summary>
 	void FixedUpdate() {
 		GetCurrentPosition();
-			
+		
 		// Move UP
-		if(Input.GetAxisRaw("Vertical") > 0) {
+		if(Input.GetAxisRaw("Vertical") > 0 || isUpPressed) {
 			MoveUp();
 		}
 		
 		// Move DOWN
-		if(Input.GetAxisRaw("Vertical") < 0) {
+		if(Input.GetAxisRaw("Vertical") < 0 || isDownPressed) {
 			MoveDown();
 		}
-		
-		
 	}
 	
 	/// <summary>
@@ -94,6 +101,22 @@ public class SantaScroller : MonoBehaviour {
 	/// </summary>
 	public void MoveDown() {
 		transform.position = new Vector3(x, y-speed, z);
+	}
+	
+	public void pressDown() {
+		isDownPressed = true;
+	}
+	
+	public void pressDownRelease() {
+		isDownPressed = true;
+	}
+	
+	public void pressUp() {
+		isUpPressed = true;
+	}
+	
+	public void pressUpRelease() {
+		isUpPressed = false;
 	}
 	
 	/// <summary>
