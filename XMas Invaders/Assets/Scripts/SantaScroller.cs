@@ -44,20 +44,14 @@ public class SantaScroller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary) {
-			Vector3 touchPosition = Input.GetTouch(0).position;
+		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
+			// Get movement of the finger since last frame
+			Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 			
-			//Check if it is left or right?
-			if(touchPosition.y < 0.0f){
-				Debug.Log("down");
-				//transform.Translate(Vector3.down * speed * Time.deltaTime);
-				transform.position = new Vector3(x, y+speed, z);
-			} else if (touchPosition.y > 0.0f) {
-				Debug.Log("up");
-				//transform.Translate(Vector3.up * speed * Time.deltaTime);
-				transform.position = new Vector3(x, y-speed, z);
-			}
-			
+			Vector3 touchPosition = new Vector3(touchDeltaPosition.x, touchDeltaPosition.y, touchDeltaPosition.y);
+				
+			// Move object across XY plane
+			transform.position = Camera.main.ScreenToWorldPoint(touchPosition);
 		}
 	
 	
