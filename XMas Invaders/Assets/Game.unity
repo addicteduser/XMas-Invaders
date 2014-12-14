@@ -88,7 +88,7 @@ GameObject:
   - 50: {fileID: 38474595}
   m_Layer: 0
   m_Name: Teddy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,7 +204,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: .100000001}
   m_Center: {x: 0, y: 0}
 --- !u!1 &64432680
 GameObject:
@@ -215,7 +215,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 64432681}
   - 61: {fileID: 64432682}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: LowerBound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: .100000001}
   m_Center: {x: 0, y: 0}
 --- !u!1 &97772665
 GameObject:
@@ -260,7 +260,7 @@ GameObject:
   - 50: {fileID: 97772666}
   m_Layer: 0
   m_Name: Teddy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,7 +333,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 97772665}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.10000038, y: 0, z: 0}
+  m_LocalPosition: {x: -6.6500001, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   - 50: {fileID: 221009687}
   m_Layer: 0
   m_Name: Teddy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1075,11 +1075,12 @@ GameObject:
   - 4: {fileID: 639244066}
   - 212: {fileID: 639244070}
   - 50: {fileID: 639244068}
-  - 114: {fileID: 639244067}
   - 61: {fileID: 639244069}
+  - 114: {fileID: 639244067}
+  - 114: {fileID: 639244071}
   m_Layer: 8
   m_Name: Santa
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1158,6 +1159,19 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: dc8f31941851edf4b859014bb89c670d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &639244071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 639244065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b89bc3a3c42b414389d12551eaf3270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1
+  isEnemy: 1
 --- !u!1 &708521085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2674,7 +2688,7 @@ GameObject:
   - 50: {fileID: 1784955204}
   m_Layer: 0
   m_Name: Teddy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2747,7 +2761,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1784955203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.3899994, y: -6.13000011, z: 0}
+  m_LocalPosition: {x: -6.82000017, y: -6.01000023, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3090,7 +3104,7 @@ GameObject:
   - 50: {fileID: 2098923311}
   m_Layer: 0
   m_Name: Teddy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

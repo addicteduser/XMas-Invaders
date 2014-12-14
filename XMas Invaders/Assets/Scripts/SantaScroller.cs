@@ -95,4 +95,33 @@ public class SantaScroller : MonoBehaviour {
 	public void MoveDown() {
 		transform.position = new Vector3(x, y-speed, z);
 	}
+	
+	/// <summary>
+	/// When colliding with an enemy
+	/// </summary>
+	/// <param name="collision">Collision.</param>
+	void OnCollisionEnter2D(Collision2D collision) {
+		// Flag to indicate that player sustained damage
+		bool damagePlayer = false;
+		// Who did Santa collide with?
+		GameObject enemy = collision.gameObject;
+		
+		if (enemy.tag == "Enemy") {
+			// Kill Enemy
+			Health enemyHealth = enemy.GetComponent<Health>();
+			if (enemyHealth != null) {
+				enemyHealth.Damage(enemyHealth.hp);
+			}
+			
+			damagePlayer = true;
+		}
+		
+		// Santa also sustains damage
+		if (damagePlayer) {
+			Health playerHealth = GetComponent<Health>();
+			if (playerHealth != null) {
+				playerHealth.Damage(playerHealth.hp);
+			}
+		}
+	}
 }
