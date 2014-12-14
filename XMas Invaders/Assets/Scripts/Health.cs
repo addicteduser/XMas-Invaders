@@ -27,14 +27,12 @@ public class Health : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D otherCollider)	{
 		// Is this a shot?
-		MoveTrail shot = otherCollider.gameObject.GetComponent<MoveTrail>();
+		MoveBulletTrail shot = otherCollider.gameObject.GetComponent<MoveBulletTrail>();
 		if (shot != null) {
 			// Avoid friendly fire
 			if (shot.isEnemyShot != isEnemy) {
 				Damage(shot.damage);
-				
-				Debug.Log(shot.gameObject.name);
-				
+								
 				if (!shot.gameObject.name.Contains("GarlandWipeoutBulletTrail")) {
 					// Destroy the shot
 					Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script

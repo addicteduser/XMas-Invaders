@@ -1,70 +1,98 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Handler for Santa's movements
+/// </summary>
 public class SantaScroller : MonoBehaviour {
-
-	// This is responsible for Santa's movements
-
-	public static Vector3 currentPos;
-
-	private float speed;
+	/// <summary>
+	/// For wipeout scrolling
+	/// </summary>
+	public Transform wipeout;
+	/// <summary>
+	/// For bounds scrolling
+	/// </summary>
+	public Transform bounds;
+	
+	/// <summary>
+	/// How fast can Santa move?
+	/// </summary>
+	private float speed = 0.2f;
 	private float distanceFromCamera;
 	private float distanceFromWipeOut;
-	public Transform wipeout;
+	
 	private float x, y, z;
-	private float lockY, lockZ;
+	private float lockY = 0, lockZ = 0;
 	
 	// Use this for initialization
 	void Start () {
-		speed = 0.2f;		
+		// get the distance from the camera
 		distanceFromCamera = Mathf.Abs(transform.position.x - Camera.main.transform.position.x);
-		lockY = wipeout.transform.position.y;
-		lockZ = wipeout.transform.position.z;
+		// get the distance from the wipeout
 		distanceFromWipeOut = Mathf.Abs(transform.position.x - wipeout.transform.position.x);
+		
 		GetCurrentPosition();
 	}
 	
+	/// <summary>
+	/// For vertical movement
+	/// </summary>
 	void FixedUpdate() {
 		GetCurrentPosition();
-				
+			
 		// Move UP
 		if(Input.GetAxisRaw("Vertical") > 0) {
-			transform.position = new Vector3(x, y+speed, z);			
-			//transform.Translate(new Vector2(0f, speed));
+			MoveUp();
 		}
 		
 		// Move DOWN
 		if(Input.GetAxisRaw("Vertical") < 0) {
-			transform.position = new Vector3(x, y-speed, z);
-			//transform.Translate(new Vector2(0f, -speed));
+			MoveDown();
 		}
 		
-		wipeout.transform.position = new Vector3(x - distanceFromWipeOut, lockY, lockZ);
+		
 	}
 	
-	// Update is called once per frame
+	/// <summary>
+	/// For horizontal movement
+	/// </summary>
 	void Update () {
-		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
-			// Get movement of the finger since last frame
-			Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-			
-			Vector3 touchPosition = new Vector3(touchDeltaPosition.x, touchDeltaPosition.y, touchDeltaPosition.y);
-				
-			// Move object across XY plane
-			transform.position = Camera.main.ScreenToWorldPoint(touchPosition);
-		}
-	
-	
-		// move horizontal
+		float newX;
+		
 		GetCurrentPosition();
-		float newX = Camera.main.transform.position.x - distanceFromCamera;
+		
+		// Santa
+		newX = Camera.main.transform.position.x - distanceFromCamera;
 		transform.position = new Vector3(newX, y, z);
-		currentPos = transform.position;
+		
+		// Wipeout
+		newX = x - distanceFromWipeOut;
+		wipeout.transform.position = new Vector3(newX, lockY, lockZ);
+		
+		// Bounds
+		bounds.transform.position = new Vector3(x, lockY, lockZ);
 	}
 	
+	/// <summary>
+	/// Gets Santa's the current position.
+	/// </summary>
 	private void GetCurrentPosition() {
 		x = transform.position.x;
 		y = transform.position.y;
 		z = transform.position.z;
+	}
+	
+	/// <summary>
+	/// Moves up.
+	/// </summary>
+	public void MoveUp() {
+		transform.position = new Vector3(x, y+speed, z);
+	}
+	
+	/// <summary>
+	/// Moves down.
+	/// </summary>
+	public void MoveDown() {
+		transform.position = new Vector3(x, y-speed, z);
 	}
 }

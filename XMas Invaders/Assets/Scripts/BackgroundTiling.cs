@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// Handler for the repetition of the background
+/// </summary>
 public class BackgroundTiling : MonoBehaviour {
-	
-	// This code is for the recycling/respawning of the background
-	// Infinite scroller-ish effect
-	
+	/// <summary>
+	/// Position of the main camera
+	/// </summary>
 	private Transform cameraPos;
+	/// <summary>
+	/// Width of the background image
+	/// </summary>
 	private float spriteWidth;
 	
 	void Start() {
