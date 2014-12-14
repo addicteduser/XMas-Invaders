@@ -108,7 +108,7 @@ public class SantaScroller : MonoBehaviour {
 	}
 	
 	public void pressDownRelease() {
-		isDownPressed = true;
+		isDownPressed = false;
 	}
 	
 	public void pressUp() {
